@@ -88,14 +88,19 @@ export function Services() {
         <BlurFade delay={150} className="mt-14">
           <article className="group relative overflow-hidden rounded-3xl bg-ink p-7 text-mist sm:p-10">
             <BorderBeam duration={12} size={240} />
-            <div className="relative grid gap-8 lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-10">
-              <span className="grid size-16 place-items-center rounded-2xl bg-teal/15 text-teal transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
-                <Calculator className="size-8" aria-hidden />
-              </span>
+            <div className="relative grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-12">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-bright">Serviço principal</p>
-                <h3 className="mt-2 font-display text-2xl font-bold tracking-tight sm:text-3xl">Planejamento tributário</h3>
-                <p className="mt-3 max-w-2xl leading-relaxed text-mist/70">
+                {/* Ícone ao lado do rótulo e do título */}
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-teal/15 text-teal transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105 sm:size-16">
+                    <Calculator className="size-7 sm:size-8" aria-hidden />
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-bright">Serviço principal</p>
+                    <h3 className="mt-1.5 font-display text-2xl font-bold tracking-tight sm:text-3xl">Planejamento tributário</h3>
+                  </div>
+                </div>
+                <p className="mt-5 max-w-2xl leading-relaxed text-mist/70">
                   Comparamos os regimes com os números reais da sua empresa e indicamos o enquadramento que custa menos, sempre dentro da lei. Revisamos de novo a cada ano ou quando o faturamento muda.
                 </p>
               </div>
