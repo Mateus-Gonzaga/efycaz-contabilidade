@@ -17,6 +17,7 @@ import {
 import { BlurFade } from "@/components/magic/blur-fade";
 import { BorderBeam } from "@/components/magic/border-beam";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselItem } from "@/components/ui/carousel";
 import { Watermark } from "@/components/watermark";
 
 type Service = { icon: LucideIcon; title: string; desc: string };
@@ -101,30 +102,29 @@ export function Services() {
           </article>
         </BlurFade>
 
-        {/* Áreas de atuação */}
-        <div className="mt-6 grid gap-6 lg:grid-cols-3">
-          {areas.map((area, i) => (
-            <BlurFade key={area.title} delay={200 + i * 100} as="article" className="flex flex-col rounded-3xl border border-ink/10 bg-white p-3 sm:p-4">
-              <header className="flex items-baseline gap-3 px-4 pb-4 pt-4">
-                <span className="font-display text-sm font-extrabold text-teal-deep">{area.label}</span>
-                <h3 className="font-display text-xl font-bold tracking-tight">{area.title}</h3>
-              </header>
-              <ul className="flex flex-1 flex-col gap-1">
-                {area.items.map((s) => (
-                  <li key={s.title} className="group flex gap-4 rounded-2xl p-4 transition-colors duration-300 hover:bg-mist">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-teal-soft text-teal-deep transition-all duration-300 group-hover:bg-teal group-hover:text-ink-deep">
-                      <s.icon className="size-5" aria-hidden />
+        {/* Carrossel com os serviços de cada área */}
+        <BlurFade delay={200} className="mt-6">
+          <Carousel label="Serviços da Efycaz">
+            {areas.flatMap((area) =>
+              area.items.map((s) => (
+                <CarouselItem key={s.title}>
+                  <article className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_24px_48px_-24px_rgba(72,70,85,.35)]">
+                    <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-teal-deep">
+                      <span className="font-display">{area.label}</span>
+                      <span aria-hidden className="h-px w-4 bg-teal-deep/40" />
+                      {area.title}
+                    </p>
+                    <span className="mt-6 grid size-12 place-items-center rounded-2xl bg-teal-soft text-teal-deep transition-all duration-300 group-hover:-rotate-6 group-hover:bg-teal group-hover:text-ink-deep">
+                      <s.icon className="size-6" aria-hidden />
                     </span>
-                    <div>
-                      <h4 className="font-bold leading-snug">{s.title}</h4>
-                      <p className="mt-1 text-sm leading-relaxed text-ink/80">{s.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </BlurFade>
-          ))}
-        </div>
+                    <h3 className="mt-5 font-display text-xl font-bold tracking-tight">{s.title}</h3>
+                    <p className="mt-2 leading-relaxed text-ink/80">{s.desc}</p>
+                  </article>
+                </CarouselItem>
+              )),
+            )}
+          </Carousel>
+        </BlurFade>
       </div>
     </section>
   );
