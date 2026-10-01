@@ -41,7 +41,7 @@ export function Hero() {
               <WhatsAppIcon /> Quero falar com um contador
               <ArrowRight className="transition-transform group-hover/btn:translate-x-1" />
             </Button>
-            <p className="flex items-center justify-center gap-2 text-sm text-mist/75">
+            <p className="flex items-center justify-center gap-2 whitespace-nowrap text-sm text-mist/75">
               <Clock className="size-4 text-teal" aria-hidden /> {HOURS}
             </p>
           </BlurFade>
