@@ -12,7 +12,7 @@ const promises = ["Zero papelada para você", "Troca de contador sem burocracia"
 export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="grain relative isolate overflow-hidden bg-ink pb-24 pt-32 text-mist sm:pb-32 sm:pt-40">
-      <LineSymbol className="-bottom-56 -left-48 w-[30rem] text-teal opacity-35" duration={11} />
+      <LineSymbol className="-bottom-36 -left-28 w-[30rem] text-teal opacity-35" duration={11} />
       <LineSymbol className="-right-28 top-10 hidden w-[42rem] text-teal opacity-60 lg:block" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
         <div>
