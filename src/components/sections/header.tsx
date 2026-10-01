@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ChevronRight, Menu, X } from "lucide-react";
+import { LineSymbol } from "@/components/magic/line-symbol";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { whatsappLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -80,7 +81,12 @@ export function Header() {
             className="group/logo flex shrink-0 items-center gap-2.5 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal"
             aria-label="Efycaz Contabilidade, voltar ao início"
           >
-            <img src="/simbolo-claro.png" alt="" width={40} height={40} className="size-9 transition-transform duration-300 group-hover/logo:-rotate-6" />
+            {/* Símbolo desenhado em linhas brancas, sempre animado */}
+            <LineSymbol
+              strokeWidth={14}
+              trail={0.35}
+              className="relative z-0 size-10 overflow-visible text-white transition-transform duration-300 group-hover/logo:-rotate-6"
+            />
             <span className="leading-none">
               <span className="block font-display text-lg font-extrabold tracking-wide text-teal">EFYCAZ</span>
               <span className="block text-[0.55rem] font-bold uppercase tracking-[0.32em] text-mist/80">Contabilidade</span>

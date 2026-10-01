@@ -6,7 +6,19 @@ import { SYMBOL_PATHS } from "./symbol-paths";
  * Um traço de base bem suave fica sempre visível; por cima, as linhas são desenhadas,
  * seguram e se apagam em loop, cada parte com um pequeno atraso.
  */
-export function LineSymbol({ className, duration = 9 }: { className?: string; duration?: number }) {
+export function LineSymbol({
+  className,
+  duration = 9,
+  strokeWidth = 1.6,
+  trail = 0.12,
+}: {
+  className?: string;
+  duration?: number;
+  /** Espessura das linhas (em unidades do viewBox de 444). Em ícones pequenos use algo como 22. */
+  strokeWidth?: number;
+  /** Opacidade da trilha de base, sempre visível. */
+  trail?: number;
+}) {
   return (
     <svg
       viewBox="0 0 444 444"
@@ -17,7 +29,7 @@ export function LineSymbol({ className, duration = 9 }: { className?: string; du
       <g fill="none" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke">
         {/* Base: contorno quase invisível, dá a "pista" do desenho */}
         {SYMBOL_PATHS.map((d, i) => (
-          <path key={`b${i}`} d={d} stroke="currentColor" strokeOpacity={0.12} strokeWidth={1.2} />
+          <path key={`b${i}`} d={d} stroke="currentColor" strokeOpacity={trail} strokeWidth={strokeWidth * 0.75} />
         ))}
         {/* Linhas animadas */}
         {SYMBOL_PATHS.map((d, i) => (
@@ -27,7 +39,7 @@ export function LineSymbol({ className, duration = 9 }: { className?: string; du
             pathLength={1}
             className="line-draw"
             stroke="currentColor"
-            strokeWidth={1.6}
+            strokeWidth={strokeWidth}
             style={{ "--line-delay": `${i * 0.35}s` } as React.CSSProperties}
           />
         ))}
