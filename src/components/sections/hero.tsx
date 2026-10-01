@@ -21,19 +21,19 @@ export function Hero() {
           </BlurFade>
           <BlurFade delay={100}>
             <h1 id="hero-title" className="mt-6 font-display text-[2.5rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
-              Esqueça a{" "}
+              Pare de pagar imposto{" "}
               <span className="relative whitespace-nowrap text-teal">
-                contabilidade
+                a mais
                 <svg aria-hidden viewBox="0 0 200 12" preserveAspectRatio="none" className="absolute -bottom-2 left-0 h-3 w-full text-teal/60">
                   <path d="M2 9C50 3 150 3 198 7" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
-              . <span className="block text-mist/90">A gente resolve tudo.</span>
+              . <span className="text-mist/90">Sua contabilidade resolvida pelo WhatsApp.</span>
             </h1>
           </BlurFade>
           <BlurFade delay={200}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-mist/75 sm:text-xl">
-              Impostos, guias, folha, prazos e burocracia passam a ser problema nosso. Você volta a fazer o que dá dinheiro: vender, atender e crescer. E ainda paga só o imposto que a lei exige.
+              A Efycaz revisa o enquadramento tributário da sua empresa, cuida das obrigações fiscais e da folha, e responde você com um contador de verdade, não com robô nem número de protocolo.
             </p>
           </BlurFade>
           <BlurFade delay={300} className="mt-10 flex flex-col sm:flex-row">
