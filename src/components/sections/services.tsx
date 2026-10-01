@@ -90,9 +90,9 @@ export function Services() {
                   Comparamos os regimes com os números reais da sua empresa e indicamos o enquadramento que custa menos, sempre dentro da lei. Revisamos de novo a cada ano ou quando o faturamento muda.
                 </p>
               </div>
-              <ul className="flex flex-wrap gap-2 lg:max-w-[15rem] lg:justify-end" aria-label="Regimes analisados">
+              <ul className="grid w-full grid-cols-2 gap-2 sm:max-w-sm lg:w-[19rem]" aria-label="Regimes analisados">
                 {regimes.map((r) => (
-                  <li key={r} className="rounded-full border border-mist/15 px-3.5 py-1.5 text-sm font-bold text-mist/85">
+                  <li key={r} className="whitespace-nowrap rounded-full border border-mist/15 px-3 py-2 text-center text-sm font-bold text-mist/85">
                     {r}
                   </li>
                 ))}
