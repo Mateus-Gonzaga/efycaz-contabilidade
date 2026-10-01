@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Paleta extraída da logo: grafite (fundo), teal (marca) e névoa (símbolo) */
+@theme {
+  --color-ink: #484655;
+  --color-ink-deep: #34323f;
+  --color-ink-soft: #5b5969;
+  --color-teal: #4db6ac;
+  --color-teal-deep: #23736b;
+  --color-teal-bright: #78d0c7; /* teal para textos pequenos sobre fundo grafite */
+  --color-teal-soft: #d8f0ed;
+  --color-mist: #efeff4;
+  --color-paper: #f7f6f2;
+  --color-whatsapp: #25d366;
+
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-border-beam: border-beam calc(var(--duration, 8) * 1s) infinite linear;
+  --animate-marquee: marquee 32s linear infinite;
+
+  @keyframes border-beam {
+    100% { offset-distance: 100%; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(40px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+dialog::backdrop { animation: fade-in .3s ease-out; }
+@keyframes fade-in { from { opacity: 0; } }
+body:has(dialog[open]) { overflow: hidden; }
+body {
+  @apply bg-paper font-sans text-ink antialiased;
+}
+::selection { @apply bg-teal text-white; }
+
+/* Grão sutil de papel, evita o visual "chapado" de template */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Selo: gira enquanto o cursor estiver em cima e para onde estiver ao sair */
+@keyframes spin-seal { to { rotate: 360deg; } }
+.spin-hover { animation: spin-seal 8s linear infinite paused; }
+.spin-hover:hover { animation-play-state: running; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  /* Exceções: só acontecem por ação do visitante (rolar ou passar o mouse) */
+  .reveal { transition: opacity 0.9s ease-out !important; }
+  .spin-hover { animation: spin-seal 8s linear infinite paused !important; }
+  .spin-hover:hover { animation-play-state: running !important; }
+}

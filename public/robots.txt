@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: trocar pelo domínio real
+Sitemap: https://www.efycaz.com.br/sitemap.xml
