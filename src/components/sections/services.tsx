@@ -66,12 +66,12 @@ export function Services() {
           <BlurFade>
             <Badge>O que fazemos por você</Badge>
             <h2 id="services-title" className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              Tudo o que a sua empresa precisa, num só lugar.
+              Toda a burocracia da sua empresa. Com a gente.
             </h2>
           </BlurFade>
           <BlurFade delay={100}>
             <p className="text-lg leading-relaxed text-ink/80 lg:pb-2">
-              Da abertura do CNPJ à gestão financeira, a Efycaz cuida da parte técnica e entrega o que interessa: impostos corretos, prazos cumpridos e números que ajudam a decidir.
+              Você não precisa entender de imposto, guia ou eSocial. Essa é a nossa parte. Da abertura do CNPJ à gestão financeira, a Efycaz assume tudo e te entrega só o que importa: números claros e prazos em dia.
             </p>
           </BlurFade>
         </div>

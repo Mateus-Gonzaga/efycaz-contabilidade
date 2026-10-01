@@ -57,7 +57,7 @@ export function SocialProof() {
           <BlurFade className="max-w-2xl">
             <Badge>Quem já é cliente</Badge>
             <h2 id="proof-title" className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              Menos imposto, menos susto, mais tempo para o seu negócio.
+              Eles pararam de perder tempo com contabilidade. Você também pode.
             </h2>
           </BlurFade>
           <BlurFade delay={150} className="hidden shrink-0 md:block">

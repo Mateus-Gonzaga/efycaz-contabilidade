@@ -13,15 +13,15 @@ export function FinalCta() {
         <Watermark tone="light" className="-right-24 -top-16 w-[22rem]" duration={12} />
         <div className="relative">
           <p className="inline-flex items-center gap-2 rounded-full bg-mist/10 px-4 py-2 text-sm font-bold text-teal-bright">
-            <Clock className="size-4" aria-hidden /> Cada mês no regime errado é dinheiro que não volta
+            <Clock className="size-4" aria-hidden /> Cada hora com papelada é uma hora longe do seu negócio
           </p>
           <h2 id="cta-title" className="mx-auto mt-6 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
-            Descubra em 5 minutos quanto sua empresa pode economizar.
+            Pare de perder tempo com contabilidade. Hoje.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-mist/75">
-            Mande uma mensagem agora e converse direto com um contador da Efycaz.
+            Mande uma mensagem agora e um contador da Efycaz assume daqui. Você só volta a pensar nisso quando quiser.
           </p>
-          <Button href={whatsappLink("Olá! Quero descobrir quanto posso economizar.")} target="_blank" rel="noopener" size="lg" className="mt-10">
+          <Button href={whatsappLink("Olá! Quero passar a minha contabilidade para a Efycaz.")} target="_blank" rel="noopener" size="lg" className="mt-10">
             <WhatsAppIcon /> Começar pelo WhatsApp
             <ArrowRight className="transition-transform group-hover/btn:translate-x-1" />
           </Button>

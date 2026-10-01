@@ -7,7 +7,7 @@ import { BlurFade } from "@/components/magic/blur-fade";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { HOURS, whatsappLink } from "@/lib/site";
 
-const promises = ["Atendimento com contador de verdade", "Troca de contador sem burocracia", "Resposta no mesmo dia útil"];
+const promises = ["Zero papelada para você", "Troca de contador sem burocracia", "Contador de verdade no WhatsApp"];
 
 export function Hero() {
   return (
@@ -17,28 +17,28 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
         <div>
           <BlurFade>
-            <Badge className="border-teal/40 bg-teal/15 text-teal-bright">Contabilidade consultiva para empresas</Badge>
+            <Badge className="border-teal/40 bg-teal/15 text-teal-bright">Contabilidade completa para empresas</Badge>
           </BlurFade>
           <BlurFade delay={100}>
             <h1 id="hero-title" className="mt-6 font-display text-[2.5rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
-              Pare de pagar imposto{" "}
+              Esqueça a{" "}
               <span className="relative whitespace-nowrap text-teal">
-                a mais
+                contabilidade
                 <svg aria-hidden viewBox="0 0 200 12" preserveAspectRatio="none" className="absolute -bottom-2 left-0 h-3 w-full text-teal/60">
                   <path d="M2 9C50 3 150 3 198 7" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
-              . <span className="text-mist/90">Sua contabilidade resolvida pelo WhatsApp.</span>
+              . <span className="text-mist/90">A gente resolve tudo.</span>
             </h1>
           </BlurFade>
           <BlurFade delay={200}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-mist/75 sm:text-xl">
-              A Efycaz revisa o enquadramento tributário da sua empresa, cuida das obrigações fiscais e da folha, e responde você com um contador de verdade, não com robô nem número de protocolo.
+              Impostos, guias, folha, prazos e burocracia passam a ser problema nosso. Você volta a fazer o que dá dinheiro: vender, atender e crescer. E ainda paga só o imposto que a lei exige.
             </p>
           </BlurFade>
           <BlurFade delay={300} className="mt-10 flex flex-col sm:flex-row">
-            <Button href={whatsappLink("Olá! Quero falar com um contador sobre a minha empresa.")} target="_blank" rel="noopener" size="lg">
-              <WhatsAppIcon /> Quero falar com um contador
+            <Button href={whatsappLink("Olá! Quero tirar a contabilidade das minhas costas. Como funciona?")} target="_blank" rel="noopener" size="lg">
+              <WhatsAppIcon /> Quero me livrar da burocracia
               <ArrowRight className="transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </BlurFade>

@@ -28,7 +28,7 @@ export function HowItWorks() {
         <BlurFade className="mx-auto max-w-2xl text-center">
           <Badge>Como funciona</Badge>
           <h2 id="how-title" className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-            Três passos. Nenhuma papelada para você.
+            Você manda uma mensagem. A gente faz o resto.
           </h2>
         </BlurFade>
 
