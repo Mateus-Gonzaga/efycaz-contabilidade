@@ -1,18 +1,25 @@
+import { LineSymbol } from "@/components/magic/line-symbol";
 import { cn } from "@/lib/utils";
 
-/** Símbolo da Efycaz como marca d'água decorativa. O pai precisa ser `relative overflow-hidden`. */
-export function Watermark({ tone = "dark", className }: { tone?: "dark" | "light"; className?: string }) {
+/**
+ * Símbolo da Efycaz como marca d'água decorativa, desenhado em linhas animadas.
+ * tone="dark": linhas escuras, para seções de fundo claro.
+ * tone="light": linhas teal, para seções de fundo grafite.
+ * O pai precisa ser `relative isolate overflow-hidden`.
+ */
+export function Watermark({
+  tone = "dark",
+  className,
+  duration = 10,
+}: {
+  tone?: "dark" | "light";
+  className?: string;
+  duration?: number;
+}) {
   return (
-    <img
-      src={tone === "light" ? "/simbolo-claro.png" : "/simbolo-grafite.png"}
-      alt=""
-      aria-hidden
-      loading="lazy"
-      className={cn(
-        "pointer-events-none absolute -z-10 select-none",
-        tone === "light" ? "opacity-[0.05]" : "opacity-[0.045]",
-        className,
-      )}
+    <LineSymbol
+      duration={duration}
+      className={cn(tone === "light" ? "text-teal opacity-45" : "text-ink-deep opacity-30", className)}
     />
   );
 }

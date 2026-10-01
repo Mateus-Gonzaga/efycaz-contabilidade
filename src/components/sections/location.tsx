@@ -8,7 +8,7 @@ import { ADDRESS, HOURS, gmailComposeUrl, mapsDirectionsUrl, mapsEmbedUrl } from
 export function Location() {
   return (
     <section id="localizacao" aria-labelledby="location-title" className="relative isolate overflow-hidden bg-paper py-24 sm:py-32">
-      <Watermark className="-right-28 bottom-0 w-[26rem]" />
+      <Watermark className="-right-28 bottom-0 w-[26rem]" duration={9} />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <BlurFade className="max-w-2xl">
           <Badge>Onde estamos</Badge>

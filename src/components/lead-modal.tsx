@@ -152,7 +152,7 @@ export function LeadModal() {
           </label>
           <div className="flex flex-col-reverse gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs leading-relaxed text-ink/80 sm:max-w-[15rem]">
-              Atendimento {HOURS.charAt(0).toLowerCase() + HOURS.slice(1)}. Seus dados vão direto para o WhatsApp e não ficam armazenados no site. <a href="/privacidade.html" target="_blank" className="underline underline-offset-2 hover:text-teal-deep">Política de Privacidade</a>.
+              Atendimento de {HOURS.charAt(0).toLowerCase() + HOURS.slice(1)}. Seus dados vão direto para o WhatsApp e não ficam armazenados no site. <a href="/privacidade.html" target="_blank" className="underline underline-offset-2 hover:text-teal-deep">Política de Privacidade</a>.
             </p>
             <button
               type="submit"

@@ -38,7 +38,7 @@ const testimonials = [
 export function SocialProof() {
   return (
     <section id="depoimentos" aria-labelledby="proof-title" className="relative isolate overflow-hidden bg-paper py-24 sm:py-32">
-      <Watermark className="-left-40 top-1/3 w-[34rem]" />
+      <Watermark className="-bottom-24 -left-56 w-[32rem]" duration={11} />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-ink/80">
           Empresas de diversos segmentos confiam na Efycaz

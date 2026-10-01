@@ -12,7 +12,7 @@ const promises = ["Atendimento com contador de verdade", "Troca de contador sem 
 export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="grain relative isolate overflow-hidden bg-ink pb-24 pt-32 text-mist sm:pb-32 sm:pt-40">
-      <LineSymbol className="-bottom-52 -left-44 w-[30rem] text-teal opacity-35" duration={11} />
+      <LineSymbol className="-bottom-72 -left-48 w-[30rem] text-teal opacity-35" duration={11} />
       <LineSymbol className="-right-24 -top-16 hidden w-[32rem] text-teal opacity-60 lg:block" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
         <div>
@@ -36,14 +36,11 @@ export function Hero() {
               A Efycaz revisa o enquadramento tributário da sua empresa, cuida das obrigações fiscais e da folha, e responde você com um contador de verdade, não com robô nem número de protocolo.
             </p>
           </BlurFade>
-          <BlurFade delay={300} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <BlurFade delay={300} className="mt-10 flex flex-col sm:flex-row">
             <Button href={whatsappLink("Olá! Quero falar com um contador sobre a minha empresa.")} target="_blank" rel="noopener" size="lg">
               <WhatsAppIcon /> Quero falar com um contador
               <ArrowRight className="transition-transform group-hover/btn:translate-x-1" />
             </Button>
-            <p className="flex items-center justify-center gap-2 whitespace-nowrap text-sm text-mist/75">
-              <Clock className="size-4 text-teal" aria-hidden /> {HOURS}
-            </p>
           </BlurFade>
           <BlurFade delay={400}>
             <ul className="mt-10 flex flex-col gap-3 text-sm text-mist/80 sm:flex-row sm:flex-wrap sm:gap-x-6">
@@ -53,6 +50,9 @@ export function Hero() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 flex items-center gap-2 border-t border-mist/10 pt-5 text-sm text-mist/75">
+              <Clock className="size-4 text-teal" aria-hidden /> Atendimento de {HOURS.charAt(0).toLowerCase() + HOURS.slice(1)}
+            </p>
           </BlurFade>
         </div>
 

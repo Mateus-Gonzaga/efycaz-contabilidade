@@ -40,7 +40,7 @@ const profiles: Profile[] = [
 export function Audience() {
   return (
     <section id="para-quem" aria-labelledby="audience-title" className="grain relative isolate overflow-hidden bg-ink py-24 text-mist sm:py-32">
-      <Watermark tone="light" className="-left-32 top-10 w-[28rem]" />
+      <Watermark tone="light" className="-right-32 -top-12 w-[28rem]" />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <BlurFade className="max-w-2xl">
           <Badge className="border-teal/40 bg-teal/15 text-teal-bright">Para quem é</Badge>

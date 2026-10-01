@@ -23,7 +23,7 @@ const linkClass = "transition-colors hover:text-teal focus-visible:outline-none 
 export function Footer() {
   return (
     <footer className="relative isolate overflow-hidden bg-ink-deep text-sm text-mist/70">
-      <Watermark tone="light" className="-right-16 -top-10 w-80 opacity-[0.03]" />
+      <Watermark tone="light" className="-right-16 -top-10 w-80 opacity-25" duration={12} />
 
       <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-12 pt-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         {/* Marca */}

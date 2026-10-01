@@ -26,7 +26,7 @@ export const PHONE_DISPLAY = "(61) 3613-8796";
 export const PHONE_TEL = "+556136138796";
 
 // TODO: confirmar com o escritório. Se mudar, atualize também "openingHours" no JSON-LD do index.html
-export const HOURS = "Seg. a sex., das 8h às 18h";
+export const HOURS = "Segunda a sexta, das 8h às 18h";
 
 // Ano de abertura do CNPJ (cadastro público). TODO: confirmar
 export const FOUNDED_YEAR = 2016;
