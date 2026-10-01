@@ -28,7 +28,7 @@ export function LineSymbol({ className, duration = 9 }: { className?: string; du
             className="line-draw"
             stroke="currentColor"
             strokeWidth={1.6}
-            style={{ animationDelay: `${i * 0.35}s` }}
+            style={{ "--line-delay": `${i * 0.35}s` } as React.CSSProperties}
           />
         ))}
       </g>

@@ -64,14 +64,10 @@ body {
   40%, 70% { stroke-dashoffset: 0; opacity: 1; }
   100% { stroke-dashoffset: -1; opacity: 0; }
 }
-@keyframes line-draw-once {
-  from { stroke-dashoffset: 1; }
-  to { stroke-dashoffset: 0; }
-}
 .line-draw {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: line-draw var(--draw-duration, 9s) cubic-bezier(.45, .05, .35, 1) infinite both;
+  animation: line-draw var(--draw-duration, 9s) cubic-bezier(.45, .05, .35, 1) var(--line-delay, 0s) infinite both;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,8 +77,8 @@ body {
   .reveal { transition: opacity 0.9s ease-out !important; }
   .spin-hover { animation: spin-seal 8s linear infinite paused !important; }
   .spin-hover:hover { animation-play-state: running !important; }
-  /* O símbolo em linhas é desenhado uma vez e fica pronto, sem loop */
-  .line-draw { animation: line-draw-once 3.5s ease-out 1 both !important; }
+  /* O símbolo em linhas continua animando sempre */
+  .line-draw { animation: line-draw var(--draw-duration, 9s) cubic-bezier(.45, .05, .35, 1) var(--line-delay, 0s) infinite both !important; }
   /* Faixa de segmentos: rolagem lenta e contínua, pausa ao passar o mouse */
   .animate-marquee { animation: marquee 32s linear infinite !important; }
   .group:hover .animate-marquee { animation-play-state: paused !important; }

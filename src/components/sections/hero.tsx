@@ -13,6 +13,7 @@ export function Hero() {
   return (
     <section id="inicio" aria-labelledby="hero-title" className="grain relative isolate overflow-hidden bg-ink pb-24 pt-32 text-mist sm:pb-32 sm:pt-40">
       <LineSymbol className="-bottom-52 -left-44 w-[30rem] text-teal opacity-35" duration={11} />
+      <LineSymbol className="-right-24 -top-16 hidden w-[32rem] text-teal opacity-60 lg:block" />
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-5 sm:px-8 lg:grid-cols-[1.15fr_1fr]">
         <div>
           <BlurFade>
@@ -57,8 +58,6 @@ export function Hero() {
 
         {/* iPhone em proporção real (15 Pro: 70,6 x 146,6 mm). Medidas em cqw = % da largura do aparelho. */}
         <BlurFade delay={250} className="relative mx-auto w-full max-w-[17rem] pb-4 sm:max-w-[19rem]">
-          {/* Símbolo desenhado em linhas atrás do celular: as asas aparecem dos dois lados */}
-          <LineSymbol className="left-1/2 top-[38%] w-[205%] -translate-x-1/2 -translate-y-1/2 text-teal opacity-70" />
           <div className="relative [container-type:inline-size]">
             {/* Botões laterais: ação, volume +/-, power */}
             <span aria-hidden className="absolute -left-[0.9cqw] top-[18%] h-[4.5%] w-[1.1cqw] rounded-l-sm bg-[#a8a39a]" />
