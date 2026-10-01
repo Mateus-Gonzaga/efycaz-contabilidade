@@ -20,7 +20,7 @@ export function Hero() {
             <Badge className="border-teal/40 bg-teal/15 text-teal-bright">Contabilidade completa para empresas</Badge>
           </BlurFade>
           <BlurFade delay={100}>
-            <h1 id="hero-title" className="mt-6 font-display text-[2.5rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
+            <h1 id="hero-title" className="mt-6 text-balance font-display text-[2.5rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4rem]">
               Pare de pagar imposto{" "}
               <span className="relative whitespace-nowrap text-teal">
                 a mais
@@ -28,7 +28,9 @@ export function Hero() {
                   <path d="M2 9C50 3 150 3 198 7" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
-              . <span className="text-mist/90">Sua contabilidade resolvida pelo WhatsApp.</span>
+              .
+              {/* Segunda frase em linha própria e um pouco menor: hierarquia clara e quebras equilibradas */}
+              <span className="mt-3 block text-balance text-[0.7em] leading-[1.08] text-mist/80">Sua contabilidade resolvida pelo WhatsApp.</span>
             </h1>
           </BlurFade>
           <BlurFade delay={200}>
