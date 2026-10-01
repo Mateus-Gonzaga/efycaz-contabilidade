@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   BarChart3,
   BookOpen,
@@ -15,6 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { BlurFade } from "@/components/magic/blur-fade";
+import { cn } from "@/lib/utils";
 import { BorderBeam } from "@/components/magic/border-beam";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselItem } from "@/components/ui/carousel";
@@ -58,6 +60,12 @@ const areas: { label: string; title: string; items: Service[] }[] = [
 ];
 
 export function Services() {
+  // Filtro por área: -1 mostra todos os serviços
+  const [area, setArea] = React.useState(-1);
+  const items = areas.flatMap((a, ai) => a.items.map((s) => ({ ...s, area: a, ai })));
+  const visible = area === -1 ? items : items.filter((it) => it.ai === area);
+  const tabs = [{ label: "Todos", value: -1 }, ...areas.map((a, i) => ({ label: a.title, value: i }))];
+
   return (
     <section id="servicos" aria-labelledby="services-title" className="relative isolate overflow-hidden bg-mist py-24 sm:py-32">
       <Watermark className="-right-32 -top-16 w-[30rem]" />
@@ -65,13 +73,13 @@ export function Services() {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <BlurFade>
             <Badge>O que fazemos por você</Badge>
-            <h2 id="services-title" className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              Toda a burocracia da sua empresa. Com a gente.
+            <h2 id="services-title" className="mt-5 text-balance font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+              Burocracia? <span className="text-teal-deep">Deixa com a gente.</span>
             </h2>
           </BlurFade>
           <BlurFade delay={100}>
             <p className="text-lg leading-relaxed text-ink/80 lg:pb-2">
-              Você não precisa entender de imposto, guia ou eSocial. Essa é a nossa parte. Da abertura do CNPJ à gestão financeira, a Efycaz assume tudo e te entrega só o que importa: números claros e prazos em dia.
+              Você não precisa entender de imposto, guia ou eSocial. Essa é a nossa parte. Da abertura do CNPJ à gestão financeira, a Efycaz assume tudo e te entrega só o que importa: <strong className="font-bold text-ink">números claros e prazos em dia.</strong>
             </p>
           </BlurFade>
         </div>
@@ -102,27 +110,52 @@ export function Services() {
           </article>
         </BlurFade>
 
-        {/* Carrossel com os serviços de cada área */}
-        <BlurFade delay={200} className="mt-6">
-          <Carousel label="Serviços da Efycaz">
-            {areas.flatMap((area) =>
-              area.items.map((s) => (
-                <CarouselItem key={s.title}>
-                  <article className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_24px_48px_-24px_rgba(72,70,85,.35)]">
-                    <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-teal-deep">
-                      <span className="font-display">{area.label}</span>
-                      <span aria-hidden className="h-px w-4 bg-teal-deep/40" />
-                      {area.title}
-                    </p>
-                    <span className="mt-6 grid size-12 place-items-center rounded-2xl bg-teal-soft text-teal-deep transition-all duration-300 group-hover:-rotate-6 group-hover:bg-teal group-hover:text-ink-deep">
-                      <s.icon className="size-6" aria-hidden />
-                    </span>
-                    <h3 className="mt-5 font-display text-xl font-bold tracking-tight">{s.title}</h3>
-                    <p className="mt-2 leading-relaxed text-ink/80">{s.desc}</p>
-                  </article>
-                </CarouselItem>
-              )),
-            )}
+        {/* Filtros por área + carrossel */}
+        <BlurFade delay={200} className="mt-12">
+          <div role="tablist" aria-label="Filtrar serviços por área" className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:px-0 [&::-webkit-scrollbar]:hidden">
+            {tabs.map((t) => {
+              const active = area === t.value;
+              const count = t.value === -1 ? items.length : areas[t.value].items.length;
+              return (
+                <button
+                  key={t.value}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setArea(t.value)}
+                  className={cn(
+                    "inline-flex shrink-0 items-center gap-2 rounded-full border px-4 py-2 text-sm font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal",
+                    active ? "border-ink bg-ink text-mist" : "border-ink/15 bg-white text-ink/80 hover:border-ink/40 hover:text-ink",
+                  )}
+                >
+                  {t.label}
+                  <span className={cn("rounded-full px-1.5 text-xs", active ? "bg-teal text-ink-deep" : "bg-mist text-ink/80")}>{count}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <Carousel key={area} label="Serviços da Efycaz" className="mt-6">
+            {visible.map((s, i) => (
+              <CarouselItem key={s.title}>
+                <article className="group relative flex h-full min-h-[17rem] flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_24px_48px_-24px_rgba(72,70,85,.35)]">
+                  {/* Número grande e discreto no canto */}
+                  <span aria-hidden className="pointer-events-none absolute -bottom-7 -right-1 font-display text-[6.5rem] font-extrabold leading-none text-ink/[0.05] transition-colors duration-300 group-hover:text-teal/15">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="relative flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-teal-deep">
+                    <span className="font-display">{s.area.label}</span>
+                    <span aria-hidden className="h-px w-4 bg-teal-deep/40" />
+                    {s.area.title}
+                  </p>
+                  <span className="relative mt-6 grid size-12 place-items-center rounded-2xl bg-teal-soft text-teal-deep transition-all duration-300 group-hover:-rotate-6 group-hover:bg-teal group-hover:text-ink-deep">
+                    <s.icon className="size-6" aria-hidden />
+                  </span>
+                  <h3 className="relative mt-5 font-display text-xl font-bold tracking-tight">{s.title}</h3>
+                  <p className="relative mt-2 leading-relaxed text-ink/80">{s.desc}</p>
+                </article>
+              </CarouselItem>
+            ))}
           </Carousel>
         </BlurFade>
       </div>
