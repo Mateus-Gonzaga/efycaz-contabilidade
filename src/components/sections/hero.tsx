@@ -28,7 +28,7 @@ export function Hero() {
                   <path d="M2 9C50 3 150 3 198 7" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
                 </svg>
               </span>
-              . <span className="text-mist/90">A gente resolve tudo.</span>
+              . <span className="block text-mist/90">A gente resolve tudo.</span>
             </h1>
           </BlurFade>
           <BlurFade delay={200}>
