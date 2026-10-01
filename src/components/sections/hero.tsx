@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/magic/blur-fade";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { HOURS, whatsappLink } from "@/lib/site";
+import { asset, HOURS, whatsappLink } from "@/lib/site";
 
 const promises = ["Zero papelada para você", "Troca de contador sem burocracia", "Contador de verdade no WhatsApp"];
 
@@ -85,7 +85,7 @@ export function Hero() {
                 {/* Cabeçalho do WhatsApp */}
                 <div className="flex shrink-0 items-center gap-[0.6em] bg-[#008069] px-[0.8em] pb-[0.8em] pt-[0.2em] text-white">
                   <svg viewBox="0 0 24 24" className="size-[1.4em] shrink-0 fill-current" aria-hidden><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z" /></svg>
-                  <span className="grid size-[2.6em] shrink-0 place-items-center rounded-full bg-ink"><img src="/simbolo-claro.png" alt="" className="size-[1.7em]" /></span>
+                  <span className="grid size-[2.6em] shrink-0 place-items-center rounded-full bg-ink"><img src={asset("simbolo-claro.png")} alt="" className="size-[1.7em]" /></span>
                   <div className="min-w-0 flex-1 leading-tight">
                     <p className="truncate text-[1.12em] font-bold">Efycaz Contabilidade</p>
                     <p className="text-[0.85em] text-white/80">online</p>

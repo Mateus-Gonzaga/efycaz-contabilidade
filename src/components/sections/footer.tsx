@@ -1,13 +1,13 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { ADDRESS, gmailComposeUrl, mapsDirectionsUrl } from "@/lib/site";
+import { ADDRESS, asset, gmailComposeUrl, mapsDirectionsUrl } from "@/lib/site";
 import { Watermark } from "@/components/watermark";
 
 const nav = [
-  { href: "/#servicos", label: "Serviços" },
-  { href: "/#como-funciona", label: "Como funciona" },
-  { href: "/#depoimentos", label: "Clientes" },
-  { href: "/#duvidas", label: "Dúvidas frequentes" },
-  { href: "/#localizacao", label: "Onde estamos" },
+  { href: asset("#servicos"), label: "Serviços" },
+  { href: asset("#como-funciona"), label: "Como funciona" },
+  { href: asset("#depoimentos"), label: "Clientes" },
+  { href: asset("#duvidas"), label: "Dúvidas frequentes" },
+  { href: asset("#localizacao"), label: "Onde estamos" },
 ];
 
 const servicos = [
@@ -28,8 +28,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 pb-12 pt-16 sm:grid-cols-2 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         {/* Marca */}
         <div>
-          <a href="/#inicio" className="inline-flex items-center gap-3" aria-label="Efycaz Contabilidade, voltar ao início">
-            <img src="/simbolo-claro.png" alt="" width={44} height={44} className="size-11" />
+          <a href={asset("#inicio")} className="inline-flex items-center gap-3" aria-label="Efycaz Contabilidade, voltar ao início">
+            <img src={asset("simbolo-claro.png")} alt="" width={44} height={44} className="size-11" />
             <span className="leading-none">
               <span className="block font-display text-xl font-extrabold tracking-wide text-teal">EFYCAZ</span>
               <span className="block text-[0.6rem] font-bold uppercase tracking-[0.32em] text-mist/80">Contabilidade</span>
@@ -58,7 +58,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3">
             {servicos.map((s) => (
               <li key={s}>
-                <a href="/#servicos" className={linkClass}>{s}</a>
+                <a href={asset("#servicos")} className={linkClass}>{s}</a>
               </li>
             ))}
           </ul>
@@ -98,7 +98,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} Efycaz Contabilidade. Todos os direitos reservados.
             <span aria-hidden className="mx-2">·</span>
-            <a href="/privacidade.html" className={linkClass}>Política de Privacidade</a>
+            <a href={asset("privacidade.html")} className={linkClass}>Política de Privacidade</a>
           </p>
         </div>
       </div>

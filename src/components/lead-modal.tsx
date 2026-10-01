@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ArrowRight, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { HOURS, whatsappLink } from "@/lib/site";
+import { asset, HOURS, whatsappLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "efycaz-lead-modal-visto";
@@ -104,7 +104,7 @@ export function LeadModal() {
             <div className="relative grid size-16 shrink-0 place-items-center md:size-40">
               <span aria-hidden className="absolute inset-0 rotate-6 rounded-2xl bg-teal md:rounded-[2rem]" />
               <span aria-hidden className="absolute inset-0 -rotate-3 rounded-2xl bg-ink-soft md:rounded-[2rem]" />
-              <img src="/simbolo-claro.png" alt="Efycaz Contabilidade" className="relative w-11 md:w-28" />
+              <img src={asset("simbolo-claro.png")} alt="Efycaz Contabilidade" className="relative w-11 md:w-28" />
             </div>
             <h2 id="lead-title" className="font-display text-xl font-extrabold leading-tight tracking-tight md:mt-8 md:text-4xl">
               Fale com um <span className="text-teal">especialista</span>
@@ -152,7 +152,7 @@ export function LeadModal() {
           </label>
           <div className="flex flex-col-reverse gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs leading-relaxed text-ink/80 sm:max-w-[15rem]">
-              Atendimento de {HOURS.charAt(0).toLowerCase() + HOURS.slice(1)}. Seus dados vão direto para o WhatsApp e não ficam armazenados no site. <a href="/privacidade.html" target="_blank" className="underline underline-offset-2 hover:text-teal-deep">Política de Privacidade</a>.
+              Atendimento de {HOURS.charAt(0).toLowerCase() + HOURS.slice(1)}. Seus dados vão direto para o WhatsApp e não ficam armazenados no site. <a href={asset("privacidade.html")} target="_blank" className="underline underline-offset-2 hover:text-teal-deep">Política de Privacidade</a>.
             </p>
             <button
               type="submit"

@@ -1,3 +1,4 @@
+import { asset } from "@/lib/site";
 import { Watermark } from "@/components/watermark";
 import { Quote, Star } from "lucide-react";
 import { BlurFade } from "@/components/magic/blur-fade";
@@ -61,7 +62,7 @@ export function SocialProof() {
             </h2>
           </BlurFade>
           <BlurFade delay={150} className="hidden shrink-0 md:block">
-            <img src="/selo-efycaz.png" alt="" aria-hidden width={160} height={157} className="spin-hover w-36 cursor-pointer lg:w-40" />
+            <img src={asset("selo-efycaz.png")} alt="" aria-hidden width={160} height={157} className="spin-hover w-36 cursor-pointer lg:w-40" />
           </BlurFade>
         </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">

@@ -11,6 +11,12 @@ npm run build    # gera dist/ (index.html + privacidade.html)
 npm run preview  # serve o build
 ```
 
+## Publicação
+
+O site é publicado no **GitHub Pages** automaticamente a cada `git push` na branch `main`
+(workflow em `.github/workflows/deploy.yml`):
+https://mateus-gonzaga.github.io/efycaz-contabilidade/
+
 ## Onde editar
 
 | O quê | Arquivo |
@@ -26,7 +32,7 @@ npm run preview  # serve o build
 - Número real do WhatsApp (`WHATSAPP_NUMBER`).
 - Confirmar endereço, horário e ano de fundação.
 - Depoimentos reais (`social-proof.tsx`).
-- Trocar `https://www.efycaz.com.br` pelo domínio definitivo.
+- Domínio: hoje o site está em https://mateus-gonzaga.github.io/efycaz-contabilidade/. Se usar domínio próprio, troque o endereço em `index.html`, `privacidade.html`, `public/robots.txt` e `public/sitemap.xml`.
 
 ## Parâmetros úteis
 

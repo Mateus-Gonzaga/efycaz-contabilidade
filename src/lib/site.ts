@@ -1,3 +1,7 @@
+// Caminho de arquivos públicos e páginas respeitando o "base" do Vite
+// (no GitHub Pages o site fica em /efycaz-contabilidade/)
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+
 // Configuração central — troque aqui o número, o endereço e as mensagens.
 export const WHATSAPP_NUMBER = "5561999999999"; // TODO: número real (DDI + DDD + número)
 

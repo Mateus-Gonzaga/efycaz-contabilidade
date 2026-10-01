@@ -1,7 +1,7 @@
 import type * as React from "react";
 import { ArrowLeft } from "lucide-react";
 import { Footer } from "@/components/sections/footer";
-import { ADDRESS_LINE, EMAIL, gmailComposeUrl } from "@/lib/site";
+import { ADDRESS_LINE, asset, EMAIL, gmailComposeUrl } from "@/lib/site";
 
 const UPDATED_AT = "1º de outubro de 2026";
 
@@ -114,14 +114,14 @@ export function PrivacyPage() {
     <>
       <header className="bg-ink py-5">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-6 px-5 sm:px-8">
-          <a href="/" className="flex items-center gap-3" aria-label="Efycaz Contabilidade, página inicial">
-            <img src="/simbolo-claro.png" alt="" width={40} height={40} className="size-10" />
+          <a href={asset("")} className="flex items-center gap-3" aria-label="Efycaz Contabilidade, página inicial">
+            <img src={asset("simbolo-claro.png")} alt="" width={40} height={40} className="size-10" />
             <span className="leading-none">
               <span className="block font-display text-xl font-extrabold tracking-wide text-teal">EFYCAZ</span>
               <span className="block text-[0.55rem] font-bold uppercase tracking-[0.32em] text-mist/80">Contabilidade</span>
             </span>
           </a>
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-bold text-mist/80 transition-colors hover:text-teal">
+          <a href={asset("")} className="inline-flex items-center gap-2 text-sm font-bold text-mist/80 transition-colors hover:text-teal">
             <ArrowLeft className="size-4" aria-hidden /> Voltar ao site
           </a>
         </div>

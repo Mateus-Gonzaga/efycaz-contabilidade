@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: trocar https://www.efycaz.com.br pelo domínio real -->
+<!-- Se usar domínio próprio, troque o endereço abaixo -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.efycaz.com.br/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.efycaz.com.br/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://mateus-gonzaga.github.io/efycaz-contabilidade/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mateus-gonzaga.github.io/efycaz-contabilidade/privacidade.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

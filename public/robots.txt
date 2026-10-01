@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# TODO: trocar pelo domínio real
-Sitemap: https://www.efycaz.com.br/sitemap.xml
+# Se usar domínio próprio, troque o endereço abaixo
+Sitemap: https://mateus-gonzaga.github.io/efycaz-contabilidade/sitemap.xml
