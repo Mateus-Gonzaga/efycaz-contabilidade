@@ -4,6 +4,7 @@ import "@fontsource-variable/bricolage-grotesque";
 import "@fontsource/lato/latin-400.css";
 import "@fontsource/lato/latin-700.css";
 import "./index.css";
+import { startAnimatedFavicon } from "./lib/animated-favicon";
 import { PrivacyPage } from "./pages/privacy";
 
 createRoot(document.getElementById("root")!).render(
@@ -11,3 +12,5 @@ createRoot(document.getElementById("root")!).render(
     <PrivacyPage />
   </StrictMode>,
 );
+
+startAnimatedFavicon();
