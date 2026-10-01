@@ -23,17 +23,15 @@ const steps = [
 export function HowItWorks() {
   return (
     <section id="como-funciona" aria-labelledby="how-title" className="relative isolate overflow-hidden bg-paper py-24 sm:py-32">
+      {/* Símbolo centralizado na seção inteira (atrás do título e dos passos) */}
+      <Watermark className="left-1/2 top-1/2 w-[28rem] -translate-x-1/2 -translate-y-1/2 sm:w-[36rem]" />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="relative">
-          {/* Símbolo centralizado atrás do título */}
-          <Watermark className="left-1/2 top-1/2 w-[20rem] -translate-x-1/2 -translate-y-1/2 sm:w-[24rem]" />
         <BlurFade className="mx-auto max-w-2xl text-center">
           <Badge>Como funciona</Badge>
           <h2 id="how-title" className="mt-5 font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
             Você manda uma mensagem. A gente faz o resto.
           </h2>
         </BlurFade>
-        </div>
 
         <ol className="relative mt-16 grid gap-12 md:grid-cols-3 md:gap-8">
           {/* Linha conectando os passos (desktop) */}
