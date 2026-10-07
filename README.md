@@ -31,7 +31,7 @@ https://mateus-gonzaga.github.io/efycaz-contabilidade/
 
 - Número real do WhatsApp (`WHATSAPP_NUMBER`).
 - Confirmar endereço, horário e ano de fundação.
-- Depoimentos reais (`social-proof.tsx`).
+- Depoimentos: hoje são ilustrativos, sem nome e com aviso. Trocar por relatos reais (com autorização) em `social-proof.tsx` e remover o aviso.
 - Domínio: hoje o site está em https://mateus-gonzaga.github.io/efycaz-contabilidade/. Se usar domínio próprio, troque o endereço em `index.html`, `privacidade.html`, `public/robots.txt` e `public/sitemap.xml`.
 
 ## Parâmetros úteis

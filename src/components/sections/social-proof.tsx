@@ -17,21 +17,19 @@ const segments = [
   "MEI em crescimento",
 ];
 
-// TODO: substituir por depoimentos REAIS de clientes (com autorização) antes de publicar.
+// Depoimentos ILUSTRATIVOS (sem nome). Quando houver relatos reais de clientes, com autorização,
+// troque os textos abaixo e remova a nota "Depoimentos ilustrativos" no fim da seção.
 const testimonials = [
   {
     quote: "Eu nem sabia que estava no regime errado. Depois da revisão da Efycaz, sobrou dinheiro no caixa todo mês.",
-    name: "Nome do cliente",
     role: "Sócio, clínica odontológica",
   },
   {
     quote: "Troquei de contador em uma semana e não precisei correr atrás de nada. Hoje resolvo tudo pelo WhatsApp.",
-    name: "Nome do cliente",
     role: "Proprietária, loja de roupas",
   },
   {
     quote: "Abri minha empresa saindo do MEI sem dor de cabeça. Explicaram cada passo em português claro.",
-    name: "Nome do cliente",
     role: "Desenvolvedor, empresa de tecnologia",
   },
 ];
@@ -73,13 +71,11 @@ export function SocialProof() {
                 {Array.from({ length: 5 }).map((_, j) => <Star key={j} className="size-4 fill-current" aria-hidden />)}
               </div>
               <blockquote className="mt-4 flex-1 text-lg leading-relaxed">“{t.quote}”</blockquote>
-              <figcaption className="mt-8 border-t border-mist/10 pt-5">
-                <p className="font-bold">{t.name}</p>
-                <p className="text-sm text-mist/75">{t.role}</p>
-              </figcaption>
+              <figcaption className="mt-8 border-t border-mist/10 pt-5 font-bold">{t.role}</figcaption>
             </BlurFade>
           ))}
         </div>
+        <p className="mt-8 text-center text-xs text-ink/80">Depoimentos ilustrativos.</p>
       </div>
     </section>
   );
