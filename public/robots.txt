@@ -1,5 +1,4 @@
+# PRÉVIA: bloqueado para buscadores até publicar no domínio definitivo.
+# No lançamento, troque por "Allow: /" e a linha do Sitemap.
 User-agent: *
-Allow: /
-
-# Se usar domínio próprio, troque o endereço abaixo
-Sitemap: https://mateus-gonzaga.github.io/efycaz-contabilidade/sitemap.xml
+Disallow: /

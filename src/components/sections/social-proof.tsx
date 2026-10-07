@@ -17,8 +17,8 @@ const segments = [
   "MEI em crescimento",
 ];
 
-// Depoimentos ILUSTRATIVOS (sem nome). Quando houver relatos reais de clientes, com autorização,
-// troque os textos abaixo e remova a nota "Depoimentos ilustrativos" no fim da seção.
+// ATENÇÃO: textos de exemplo, ainda não são relatos de clientes.
+// Antes de divulgar o site no domínio definitivo, troque por depoimentos reais (com autorização).
 const testimonials = [
   {
     quote: "Eu nem sabia que estava no regime errado. Depois da revisão da Efycaz, sobrou dinheiro no caixa todo mês.",
@@ -75,7 +75,6 @@ export function SocialProof() {
             </BlurFade>
           ))}
         </div>
-        <p className="mt-8 text-center text-xs text-ink/80">Depoimentos ilustrativos.</p>
       </div>
     </section>
   );
